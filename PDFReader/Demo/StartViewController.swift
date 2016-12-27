@@ -66,7 +66,8 @@ internal final class StartViewController: UIViewController {
     private func showDocument(_ document: PDFDocument) {
         let image = UIImage(named: "")
         let controller = PDFViewController.createNew(with: document, title: "", actionButtonImage: image, actionStyle: .activitySheet)
-        navigationController?.pushViewController(controller, animated: true)
+        let navController = UINavigationController(rootViewController: controller)
+        present(navController, animated: true, completion: nil)
     }
 
 }
