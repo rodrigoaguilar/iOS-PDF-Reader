@@ -64,10 +64,13 @@ internal final class StartViewController: UIViewController {
     ///
     /// Add `thumbnailsEnabled:false` to `createNew` to not load the thumbnails in the controller.
     private func showDocument(_ document: PDFDocument) {
-        let image = UIImage(named: "")
-        let controller = PDFViewController.createNew(with: document, title: "", actionButtonImage: image, actionStyle: .activitySheet)
+        let myBackButton = UIBarButtonItem(title: "Done", style: .done, target: self, action:  #selector(dismissMe))
+        let controller = PDFViewController.createNew(with: document, backButton: myBackButton)
         let navController = UINavigationController(rootViewController: controller)
         present(navController, animated: true, completion: nil)
     }
-
+    
+    @objc private func dismissMe() {
+        dismiss(animated: true, completion: nil)
+    }
 }
