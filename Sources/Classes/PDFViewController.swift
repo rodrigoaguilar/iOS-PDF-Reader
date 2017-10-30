@@ -40,11 +40,11 @@ extension PDFViewController {
         
         controller.backButton = backButton
         
-        /*if let actionButtonImage = actionButtonImage {
+        if let actionButtonImage = actionButtonImage {
             controller.actionButton = UIBarButtonItem(image: actionButtonImage, style: .plain, target: controller, action: #selector(actionButtonPressed))
         } else {
             controller.actionButton = UIBarButtonItem(barButtonSystemItem: .action, target: controller, action: #selector(actionButtonPressed))
-        }*/
+        }
         controller.isThumbnailsEnabled = isThumbnailsEnabled
         return controller
     }
