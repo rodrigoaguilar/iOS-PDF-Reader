@@ -10,7 +10,7 @@ import CoreGraphics
 import UIKit
 
 /// PDF Document on the system to be interacted with
-public struct PDFDocument {
+public struct S4OPDFDocument {
     /// Number of pages document contains
     public let pageCount: Int
     

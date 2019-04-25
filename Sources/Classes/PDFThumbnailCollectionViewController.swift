@@ -17,7 +17,7 @@ protocol PDFThumbnailControllerDelegate: class {
 /// Bottom collection of thumbnails that the user can interact with
 internal final class PDFThumbnailCollectionViewController: UICollectionViewController {
     /// Current document being displayed
-    var document: PDFDocument!
+    var document: S4OPDFDocument!
     
     /// Current page index being displayed
     var currentPageIndex: Int = 0 {

@@ -42,19 +42,19 @@ internal final class StartViewController: UIViewController {
     }
     
     /// Initializes a document with the name of the pdf in the file system
-    private func document(_ name: String) -> PDFDocument? {
+    private func document(_ name: String) -> S4OPDFDocument? {
         guard let documentURL = Bundle.main.url(forResource: name, withExtension: "pdf") else { return nil }
-        return PDFDocument(url: documentURL)
+        return S4OPDFDocument(url: documentURL)
     }
     
     /// Initializes a document with the data of the pdf
-    private func document(_ data: Data) -> PDFDocument? {
-        return PDFDocument(fileData: data, fileName: "Sample PDF")
+    private func document(_ data: Data) -> S4OPDFDocument? {
+        return S4OPDFDocument(fileData: data, fileName: "Sample PDF")
     }
     
     /// Initializes a document with the remote url of the pdf
-    private func document(_ remoteURL: URL) -> PDFDocument? {
-        return PDFDocument(url: remoteURL)
+    private func document(_ remoteURL: URL) -> S4OPDFDocument? {
+        return S4OPDFDocument(url: remoteURL)
     }
     
     
@@ -63,7 +63,7 @@ internal final class StartViewController: UIViewController {
     /// - parameter document: document to present
     ///
     /// Add `thumbnailsEnabled:false` to `createNew` to not load the thumbnails in the controller.
-    private func showDocument(_ document: PDFDocument) {
+    private func showDocument(_ document: S4OPDFDocument) {
         let myBackButton = UIBarButtonItem(title: "Done", style: .done, target: self, action:  #selector(dismissMe))
         let controller = PDFViewController.createNew(with: document, backButton: myBackButton)
         let navController = UINavigationController(rootViewController: controller)

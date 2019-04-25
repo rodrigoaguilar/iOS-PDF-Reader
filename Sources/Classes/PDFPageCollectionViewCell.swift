@@ -38,7 +38,7 @@ internal final class PDFPageCollectionViewCell: UICollectionViewCell {
     /// - parameter collectionViewBounds:           bounds of the entire collection view
     /// - parameter document:                       document to be displayed
     /// - parameter pageCollectionViewCellDelegate: delegate informed of important events
-    func setup(_ indexPathRow: Int, collectionViewBounds: CGRect, document: PDFDocument, pageCollectionViewCellDelegate: PDFPageCollectionViewCellDelegate?) {
+    func setup(_ indexPathRow: Int, collectionViewBounds: CGRect, document: S4OPDFDocument, pageCollectionViewCellDelegate: PDFPageCollectionViewCellDelegate?) {
         self.pageCollectionViewCellDelegate = pageCollectionViewCellDelegate
         document.pdfPageImage(at: indexPathRow + 1) { (backgroundImage) in
             pageView = PDFPageView(frame: bounds, document: document, pageNumber: indexPathRow, backgroundImage: backgroundImage, pageViewDelegate: self)
